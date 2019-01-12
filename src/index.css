@@ -12,3 +12,62 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+th ,td {
+  text-align: right;
+  font-size: small;
+}
+
+li {
+  font-size: small;
+}
+
+
+table {
+  table-layout: fixed;
+}
+
+.team {
+  font-size: xx-large;
+  margin-right: 20px;
+}
+
+.ebtscore, .oppscore {
+  font-size: xx-large;
+}
+
+.gameinfo {
+  font-size: large;
+  margin-right: 20px;
+}
+
+.vs {
+  padding: 20px;
+  font-size: large;
+}
+
+.livegame {
+  font-size: large;
+}
+
+span .smallspace {
+  width: 20px;
+}
+
+.medspace {
+  width: 10px;
+}
+
+.score {
+  margin-right: 10px;
+}
+
+.eventlist {
+  font-size: large;
+
+}
+
+.history-player {
+  margin-right: 10px;
+  margin-left: 10px;
+}
