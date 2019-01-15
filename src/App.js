@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import Navbar from './components/Navbar';
+//import Navbar from './components/layout/Navbar';
+
 import AddPlayer from './components/misc/AddPlayer'; 
 import Home from './components/Home';
 import Contact from './components/Contact';

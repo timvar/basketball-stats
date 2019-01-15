@@ -115,7 +115,7 @@ class Stats extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    db: state.db
+    db: state.db.db
   };
 }
 
