@@ -12,7 +12,7 @@ import Post from './components/Post';
 import PlayerList from './components/PlayerList';
 import Stats from './components/Stats';
 import RealGame from './components/RealGame';
-import firebase from 'firebase/app';
+// import firebase from 'firebase/app';
 import 'firebase/database';
 
 class App extends Component {

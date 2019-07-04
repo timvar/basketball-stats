@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import firebase from 'firebase/app';
+//import firebase from 'firebase/app';
 import 'firebase/database';
 
 class Stats extends Component {
