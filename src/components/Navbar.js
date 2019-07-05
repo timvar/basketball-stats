@@ -8,7 +8,6 @@ const Navbar = () => {
         <a className="brand-logo"> EBT T07</a>
         <ul className="right">
           <li><Link to="/">Games</Link></li>
-          <li><Link to="/stats">Stats</Link></li>
         </ul>
       </div>
     </nav>

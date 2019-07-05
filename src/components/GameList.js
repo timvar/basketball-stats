@@ -1,14 +1,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import ReactTable from 'react-table';
+import "react-table/react-table.css";
+import { Link } from 'react-router-dom';
 //import firebase from 'firebase/app';
-import 'firebase/database';
+//import 'firebase/database';
 
 class GameList extends Component {
 
-  state = {
-    games: [],
-  };
-
+  constructor(props){
+    super(props);
+    this.state = {
+      games: []
+    };
+  }
+  
   bubbleSort = (a) => {
     let swapp = false;
     let n = a.length-1;
@@ -16,7 +22,7 @@ class GameList extends Component {
     do {
         swapp = false;
         for (let i=0; i < n; i++) {
-            if (parseInt(x[i].id) > parseInt(x[i+1].id))
+            if (parseInt(x[i].id) < parseInt(x[i+1].id))
             {
                 let temp = x[i];
                 x[i] = x[i+1];
@@ -50,15 +56,65 @@ class GameList extends Component {
   componentDidMount() {
     this.getGames();
   }
-
-
+  
   render() {
     const { games } = this.state;
     console.log(games);
+    const columns = [{
+      id: 'showStats',
+      Header: 'Game',
+      accessor: game => {
+        return (
+          <Link to={'/stats/' + game.id}>
+            <div style={{ textAlign: "center" }}>{game.id}</div>
+          </Link>
+        );
+      }
+    },
+    {
+      Header: 'Home',
+      accessor: 'home',
+      Cell: row => <div style={{ textAlign: "center" }}>{row.value}</div>
+    },
+    {
+      Header: 'Away',
+      accessor: 'away',
+      Cell: row => <div style={{ textAlign: "center" }}>{row.value}</div>
+    },
+    {
+      Header: 'Date',
+      accessor: 'date',
+      Cell: row => <div style={{ textAlign: "center" }}>{row.value}</div>
+    }]
+
     return (
       <div className="container" >
-      <h4 className="center">Games</h4>
-      <table>
+        <h4 className="center">Games</h4>
+        <ReactTable
+          data={games}
+          columns={columns}
+        />
+
+      </div>
+    )
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    db: state.db.db
+  };
+}
+
+export default connect(mapStateToProps)(GameList);
+
+/*
+<td><Link to={'/player/' + player.id} key={player.id}>
+            <Player player={player} />
+          </Link>
+          </td>
+
+          <table>
       <thead>
         <tr>
             <th>Game ID</th>
@@ -81,24 +137,5 @@ class GameList extends Component {
       }
       </tbody>
       </table>
-
-    </div>
-    )
-  }
-}
-
-const mapStateToProps = (state) => {
-  return {
-    db: state.db.db
-  };
-}
-
-export default connect(mapStateToProps)(GameList);
-
-/*
-<td><Link to={'/player/' + player.id} key={player.id}>
-            <Player player={player} />
-          </Link>
-          </td>
 
         */  
