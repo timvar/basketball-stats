@@ -5,9 +5,9 @@ const Navbar = () => {
   return (
     <nav className="nav-wrapper red darken-4">
       <div className="container"> 
-        <a className="brand-logo"> EBT T07</a>
+        <a className="brand-logo"> EBT T07 Tilastot</a>
         <ul className="right">
-          <li><Link to="/">Games</Link></li>
+          <li><Link to="/">Matsit</Link></li>
         </ul>
       </div>
     </nav>

@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import ReactTable from 'react-table';
 import "react-table/react-table.css";
 import { Link } from 'react-router-dom';
-//import firebase from 'firebase/app';
-//import 'firebase/database';
 
 class GameList extends Component {
 
@@ -63,6 +61,7 @@ class GameList extends Component {
     const columns = [{
       id: 'showStats',
       Header: 'Game',
+      sortable: false,
       accessor: game => {
         return (
           <Link to={'/stats/' + game.id}>
@@ -74,22 +73,24 @@ class GameList extends Component {
     {
       Header: 'Home',
       accessor: 'home',
+      sortable: false,
       Cell: row => <div style={{ textAlign: "center" }}>{row.value}</div>
     },
     {
       Header: 'Away',
       accessor: 'away',
+      sortable: false,
       Cell: row => <div style={{ textAlign: "center" }}>{row.value}</div>
     },
     {
       Header: 'Date',
       accessor: 'date',
+      sortable: false,
       Cell: row => <div style={{ textAlign: "center" }}>{row.value}</div>
     }]
 
     return (
       <div className="container" >
-        <h4 className="center">Games</h4>
         <ReactTable
           data={games}
           columns={columns}
@@ -107,35 +108,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(GameList);
-
-/*
-<td><Link to={'/player/' + player.id} key={player.id}>
-            <Player player={player} />
-          </Link>
-          </td>
-
-          <table>
-      <thead>
-        <tr>
-            <th>Game ID</th>
-           
-        </tr>
-      </thead>
-
-      <tbody>
-
-      {games && games.map(game => {
-        return (
-          <tr key={game.id}>
-          <td>
-            {game.id}
-          
-          </td>
-          </tr>
-        );
-      })
-      }
-      </tbody>
-      </table>
-
-        */  

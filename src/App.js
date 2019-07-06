@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Games from './components/GameList';
-//import PlayerList from './components/PlayerList';
+import Games from './components/Games';
 import Stats from './components/Stats';
 
 class App extends Component {
-
-  state = {
-    players: [],
-    playerStats: [],
-    
-  };
 
   render() {
     console.log(this.state);
@@ -22,7 +14,7 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path='/' component={Games} />
-            <Route path='/stats' component={Stats} />
+            <Route path='/stats/:id' component={Stats} />
           </Switch>  
         </div>
       </BrowserRouter>
