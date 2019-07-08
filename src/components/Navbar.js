@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className="nav-wrapper red darken-4">
       <div className="container"> 
-        <a className="brand-logo"> EBT T07 Tilastot</a>
+        <span className="brand-logo"> EBT T07 Tilastot</span>
         <ul className="right">
           <li><Link to="/">Matsit</Link></li>
         </ul>

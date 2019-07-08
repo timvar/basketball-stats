@@ -60,7 +60,7 @@ class GameList extends Component {
     console.log(games);
     const columns = [{
       id: 'showStats',
-      Header: 'Game',
+      Header: 'ID',
       sortable: false,
       accessor: game => {
         return (
@@ -71,19 +71,19 @@ class GameList extends Component {
       }
     },
     {
-      Header: 'Home',
+      Header: 'Koti',
       accessor: 'home',
       sortable: false,
       Cell: row => <div style={{ textAlign: "center" }}>{row.value}</div>
     },
     {
-      Header: 'Away',
+      Header: 'Vieras',
       accessor: 'away',
       sortable: false,
       Cell: row => <div style={{ textAlign: "center" }}>{row.value}</div>
     },
     {
-      Header: 'Date',
+      Header: 'PVM',
       accessor: 'date',
       sortable: false,
       Cell: row => <div style={{ textAlign: "center" }}>{row.value}</div>
@@ -94,6 +94,10 @@ class GameList extends Component {
         <ReactTable
           data={games}
           columns={columns}
+          showPagination={true}
+          pageSize={20}
+          minRows={0}
+          className="-striped -highlight"
         />
 
       </div>

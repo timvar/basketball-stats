@@ -207,15 +207,25 @@ class Stats extends Component {
       minWidth: 50,
       sortable: false,
       Cell: row => <div style={{ textAlign: "center" }}>{row.value}</div>
+    },
+    {
+      Header: '#',
+      accessor: 'playernumber',
+      minWidth: 50,
+      sortable: false,
+      Cell: row => <div style={{ textAlign: "center" }}>{row.value}</div>
     }]
 
     return (
       <div className="container">
-        <h6 className="center">Matsi ID: {this.props.match.params.id}</h6>
+        <h6 className="center">ID: {this.props.match.params.id}</h6>
         <ReactTable
           data={stats}
           columns={columns}
+          showPagination={false}
           pageSize={12}
+          minRows={0}
+          className="-striped -highlight"
         />
       </div>
     )

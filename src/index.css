@@ -62,9 +62,8 @@ span .smallspace {
   margin-right: 10px;
 }
 
-.eventlist {
-  font-size: large;
-
+ul .eventlist {
+  font-size: xx-large;
 }
 
 .history-player {
