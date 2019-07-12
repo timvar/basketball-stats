@@ -153,21 +153,21 @@ class Stats extends Component {
       Cell: row => <div style={{ textAlign: "center" }}>{row.value}</div>
     },
     {
-      Header: 'A',
+      Header: 'AST',
       accessor: 'a',
       minWidth: 50,
       sortable: false,
       Cell: row => <div style={{ textAlign: "center" }}>{row.value}</div>
     },
     {
-      Header: 'B',
+      Header: 'BLK',
       accessor: 'b',
       minWidth: 50,
       sortable: false,
       Cell: item => <div style={{ textAlign: "center" }}>{item.value}</div>
     },
     {
-      Header: 'S',
+      Header: 'STL',
       accessor: 's',
       minWidth: 50,
       sortable: false,
